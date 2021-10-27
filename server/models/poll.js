@@ -1,6 +1,6 @@
 const mongoose =require('mongoose');
 const optionSchema =new mongoose.Schema({
-    options :String,
+    option :String,
     votes:{
         type: Number,
         default :0
@@ -17,7 +17,7 @@ const pollSchema =new mongoose.Schema({
     voted:[{type: mongoose.Schema.Types.ObjectId,ref:'User'}],
     created :{
         type : Date,
-        required :Date.now
+        default: Date.now
     },
   
 });
