@@ -34,8 +34,8 @@ export const authUser=(path,data) =>{
 
         }catch(err)
         {
-            const{error}=err.response.data;
-            dispatch(addError(error));
+            const error=err.response.data;
+            dispatch(addError(error.message));
         }
     }
 }
