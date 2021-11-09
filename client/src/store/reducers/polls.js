@@ -1,7 +1,7 @@
 import { SET_POLLS,SET_CURRENT_POLL, SET_CURRENT_USER } from "../actionTypes";
 
 export const polls=(state=[],action) =>{
-    switch(action,type){
+    switch(action.type){
         case SET_POLLS:
             return action.polls;
             default:
