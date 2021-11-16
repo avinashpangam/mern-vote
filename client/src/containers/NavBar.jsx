@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import { logout } from "../store/actions";
 const NavBar =({auth,logout})=><div> 
     <ul>
+        <li> <Link to='/'>Home </Link> </li>
         <li>
     <Link to='/Register'> Register</Link>
     </li>
@@ -11,8 +12,12 @@ const NavBar =({auth,logout})=><div>
     <Link to='/login'>login</Link>
     </li>
     <li>
+        <Link to="/test">Test</Link>
+    </li>
+    <li>
         <a onClick={logout}>Logout</a>
     </li>
+    
     </ul>
     
     {auth.isAuthenticated && (<p>Logged in as {auth.user.username}</p>)} 
