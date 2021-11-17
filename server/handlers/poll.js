@@ -74,7 +74,7 @@ exports.vote =async(req,res,next) =>{
         const{answer}=req.body;
 
         if(answer){
-            const poll =await db.Poll.findById(pollid);
+            const poll =await db.Poll.findById(pollId);
             if(!poll) throw new Error('No poll found');
 
             const vote=poll.options.map(
@@ -93,7 +93,7 @@ exports.vote =async(req,res,next) =>{
             )
 
             if(poll.voted.filter(user =>
-                user.toString() === userid).length<=0 ){
+                user.toString() === userId).length<=0 ){
                     poll.voted.push(userId);
                     poll.options =vote;
                     await poll.save();
